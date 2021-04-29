@@ -16,13 +16,12 @@ def get_params():
   if len(sys.argv) < 3:
     raise ValueError('运行脚本时还需指定两个参数，参数1：源目录，参数：输出目录')
 
-  src_src = sys.argv[1]
-  out_src = sys.argv[2]
+  src_dir, out_dir = sys.argv[1:3]
 
-  if not os.path.exists(src_src):
+  if not os.path.exists(src_dir):
     raise ValueError('源目录不存在或不可读')
 
-  return src_src, out_src
+  return src_dir, out_dir
 
 
 def convert_to_png(src_dir, dest_dir):
